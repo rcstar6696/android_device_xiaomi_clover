@@ -176,8 +176,7 @@ PRODUCT_PACKAGES += \
     memtrack.sdm660
 
 PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.0-service \
-    android.hardware.broadcastradio@1.0-impl
+    android.hardware.configstore@1.0-service
 
 # Doze
 PRODUCT_PACKAGES += \
@@ -191,13 +190,6 @@ PRODUCT_PACKAGES += \
 # FBE support
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/bin/init.qti.qseecomd.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.qseecomd.sh
-
-#FM
-PRODUCT_PACKAGES += \
-    FM2 \
-    libqcomfm_jni \
-    init.qti.fm.sh \
-    qcom.fmradio
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
