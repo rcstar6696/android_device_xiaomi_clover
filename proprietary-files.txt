@@ -1142,8 +1142,7 @@ vendor/bin/imsqmidaemon
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsrcsd
--app/ims/ims.apk
--app/imssettings/imssettings.apk
+-app/ims/ims.apk:vendor/app/ims/ims.apk|350cf441da6c5e886f8f45adf03dffbd0b96f50e
 -app/uceShimService/uceShimService.apk
 etc/permissions/qti-vzw-ims-internal.xml
 vendor/framework/qti-vzw-ims-internal.jar
