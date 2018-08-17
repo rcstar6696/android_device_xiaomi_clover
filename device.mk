@@ -176,7 +176,7 @@ PRODUCT_PACKAGES += \
     android.hardware.configstore@1.0-service
 
 # Doze
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     XiaomiDoze
 
 # DRM
