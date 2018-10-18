@@ -17,7 +17,7 @@
 DEVICE_PATH := device/xiaomi/clover
 
 # AAPT
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
