@@ -31,7 +31,8 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    init.device.rc
+    init.device.rc \
+    init.macaddress_setup.sh
 
 # HW crypto
 PRODUCT_PACKAGES += \

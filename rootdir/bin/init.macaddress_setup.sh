@@ -1,4 +1,6 @@
-# Copyright (c) 2009-2012, 2014-2017, The Linux Foundation. All rights reserved.
+#! /vendor/bin/sh
+
+# Copyright (c) 2013, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -7,7 +9,7 @@
 #     * Redistributions in binary form must reproduce the above copyright
 #       notice, this list of conditions and the following disclaimer in the
 #       documentation and/or other materials provided with the distribution.
-#     * Neither the name of The Linux Foundation nor
+#     * Neither the name of Linux Foundation nor
 #       the names of its contributors may be used to endorse or promote
 #       products derived from this software without specific prior written
 #       permission.
@@ -25,28 +27,20 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-on property:persist.sys.fp.vendor=none
-	stop vendor.fps_hal
+MACADDRESS=/persist/wlan_mac.bin
+MACADDRESSVENDOR=/vendor/firmware/wlan/qca_cld/wlan_mac.bin
 
-# Set max charge current
-on property:sys.incall=true
-    write /sys/class/power_supply/battery/constant_charge_current_max 500000
+# Mount vendor with read write permission
+mount -o remount,rw /vendor 
 
-on property:sys.incall=false
-    write /sys/class/power_supply/battery/constant_charge_current_max 1000000
+# Remove old wlan_mac.bin file in vendor
+rm -f /vendor/firmware/wlan/qca_cld/wlan_mac.bin
 
-on boot
-    start macaddress_setup
+# Read out  WiFi Mac Address
+macaddr=$(printf "%b"  | od -An -t x1 -w6 -N6  $MACADDRESS | tr -d '\n ')
 
-# Set permission for double tap to wake support
-    chmod 0660 /proc/touchscreen/enable_dt2w
-    chown system system /proc/touchscreen/enable_dt2w
+# Write new Mac Adress in Vendor
+echo -e  "Intf0MacAddress=$macaddr" "\nEND">$MACADDRESSVENDOR
 
-# Camera ID
-    setprop persist.vendor.camera.exif.model "Mi PAD 4"
-
-service macaddress_setup /vendor/bin/sh /vendor/bin/init.macaddress_setup.sh
-   class main
-   user root
-   group root
-   oneshot
+# Mount vendor with read only permission
+mount -o remount,ro /vendor
