@@ -35,6 +35,9 @@ TARGET_KERNEL_CONFIG := clover_defconfig
 # Assert
 TARGET_OTA_ASSERT_DEVICE := clover
 
+# Vendor Security patch level
+VENDOR_SECURITY_PATCH := 2019-12-05
+
 # Display
 TARGET_SCREEN_DENSITY := 320
 
