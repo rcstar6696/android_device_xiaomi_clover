@@ -60,7 +60,7 @@ PRODUCT_PACKAGES += \
 	init.macaddress_setup.sh
 
 # Screen density
-PRODUCT_AAPT_CONFIG := large
+PRODUCT_AAPT_CONFIG := xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Sensors
