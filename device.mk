@@ -17,6 +17,10 @@
 # AAPT
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+# Soong
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
