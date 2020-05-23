@@ -14,27 +14,23 @@
 # limitations under the License.
 #
 
-# Inherit from msm8998-common
-include device/xiaomi/msm8998-common/BoardConfigCommon.mk
+# Inherit from sdm660-common
+include device/xiaomi/sdm660-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/xiaomi/sagit
+DEVICE_PATH := device/xiaomi/clover
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Kernel
-TARGET_KERNEL_CONFIG := sagit_defconfig
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm660
+TARGET_KERNEL_CONFIG := clover_defconfig
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := sagit
+TARGET_OTA_ASSERT_DEVICE := clover
 
 # Display
 TARGET_SCREEN_DENSITY := 480
 
-# SELinux
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
-
 # Inherit from proprietary files
-include vendor/xiaomi/sagit/BoardConfigVendor.mk
-include vendor/miuicamera/common/BoardConfigVendor.mk
-include vendor/gms/products/board.mk
+include vendor/xiaomi/clover/BoardConfigVendor.mk

@@ -17,15 +17,6 @@
 
 function blob_fixup() {
     case "${1}" in
-    vendor/etc/sensors/hals.conf)
-        sed -i '/sensors.elliptic.so/d' "${2}"
-        ;;
-    vendor/lib64/com.fingerprints.extension@1.0.so)
-        patchelf --remove-needed "android.hidl.base@1.0.so" "${2}"
-        ;;
-    vendor/lib64/vendor.goodix.hardware.fingerprintextension@1.0.so)
-        patchelf --remove-needed "android.hidl.base@1.0.so" "${2}"
-        ;;
     esac
 }
 
@@ -37,8 +28,8 @@ fi
 
 set -e
 
-export DEVICE=sagit
-export DEVICE_COMMON=msm8998-common
+export DEVICE=clover
+export DEVICE_COMMON=sdm660-common
 export VENDOR=xiaomi
 
 "./../../${VENDOR}/${DEVICE_COMMON}/extract-files.sh" "$@"

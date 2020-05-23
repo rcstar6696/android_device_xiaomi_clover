@@ -17,8 +17,8 @@
 
 set -e
 
-export DEVICE=sagit
-export DEVICE_COMMON=msm8998-common
+export DEVICE=clover
+export DEVICE_COMMON=sdm660-common
 export VENDOR=xiaomi
 
 "./../../${VENDOR}/${DEVICE_COMMON}/setup-makefiles.sh" "$@"
