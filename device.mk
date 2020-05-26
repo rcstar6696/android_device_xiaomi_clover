@@ -29,6 +29,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     $(LOCAL_PATH)/configs/audio/mixer_paths_tasha.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_tasha.xml
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+    init.device.rc
+
 # Properties
 include $(LOCAL_PATH)/vendor_prop.mk
 
