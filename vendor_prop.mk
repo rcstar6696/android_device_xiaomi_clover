@@ -1,3 +1,7 @@
+# Audio
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.audio.fluence.audiorec=true
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.stats.test=5 \
@@ -8,3 +12,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.vds.allow_hwc=0
 
+# Ultra Sound
+PRODUCT_PROPERTY_OVERRIDES += \
+    audio.chk.cal.us=0
