@@ -22,6 +22,9 @@ DEVICE_PATH := device/xiaomi/clover
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
+# Crypto
+TARGET_HW_DISK_ENCRYPTION := true
+
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm660
 TARGET_KERNEL_CONFIG := clover_defconfig
