@@ -33,7 +33,7 @@ TARGET_KERNEL_CONFIG := clover_defconfig
 TARGET_OTA_ASSERT_DEVICE := clover
 
 # Display
-TARGET_SCREEN_DENSITY := 480
+TARGET_SCREEN_DENSITY := 320
 
 # Inherit from proprietary files
 include vendor/xiaomi/clover/BoardConfigVendor.mk
