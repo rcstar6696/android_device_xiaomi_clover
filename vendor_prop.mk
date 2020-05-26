@@ -1,3 +1,6 @@
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.dualcam.lpm.enable=1
+    persist.camera.stats.test=5 \
+    persist.camera.HAL3.enabled=1 \
+    persist.camera.preview.ubwc=0
+
