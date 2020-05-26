@@ -30,7 +30,11 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Inherit from sdm660-common
 $(call inherit-product, device/xiaomi/sdm660-common/sdm660.mk)
 
-# Audio
+# Keylayout
+PRODUCT_COPY_FILES += \
+	$(DEVICE_PATH)/configs/keylayout/sdm660-snd-card_Button_Jack.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sdm660-snd-card_Button_Jack.kl
+
+#  Audio
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     $(DEVICE_PATH)/configs/audio/mixer_paths_tasha.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_tasha.xml
